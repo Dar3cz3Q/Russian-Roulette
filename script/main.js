@@ -49,6 +49,7 @@ var randomizercounting = 0;
 //var soundcounter = 0;
 
 function randomizer() {
+    //$(".players-overlay").removeClass("hidden-element");
     //soundcounter++
     const sound = document.getElementById('sound');
     sound.currentTime = 0
@@ -72,7 +73,7 @@ function randomizer() {
         randomizercounting++;
         showresult(randomplayer);
         if (killedplayers.length === playerscount - 1) {
-            killedplayers.sort();
+            killedplayers.sort(function (a,b) {return a-b});
             killedplayers_type;
             const thewinner = [];
             $.each(killedplayers_type, function (i) {
@@ -120,4 +121,8 @@ function showresult(resultnumber) {
         nameid.value = '' + actualname + ' died';
     }
     nameid.disabled = "disabled";
+    const sound = document.getElementById('sound');
+    sound.addEventListener("ended", function () {
+        $(".players-overlay").addClass("hidden-element");
+    });
 }

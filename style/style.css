@@ -101,6 +101,7 @@ body {
     height: 100%;
     font-size: 36px;
     flex-direction: column;
+    position: relative;
 }
 .players-content {
     width: 100%;
@@ -162,6 +163,13 @@ body {
 }
 .players-random-button:active {
     transform: scale(1);
+}
+.players-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .user-winner {
     width: var(--main-width);
