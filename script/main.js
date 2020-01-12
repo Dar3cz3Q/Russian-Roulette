@@ -14,6 +14,10 @@ window.addEventListener("load", function () {
 });
 
 window.addEventListener("load", function () {
+    const sound = document.getElementById('sound');
+    sound.addEventListener("ended", function () {
+        $(".players-overlay").addClass("hidden-element");
+    });
     for (let i = 2; i < 38; i++) {
         $(".users-choose").append(`<div class="user-number flex" data-count="${i}">${i}</div>`);
         var createdEl = document.getElementsByClassName("user-number")[i - 2];
@@ -49,7 +53,7 @@ var randomizercounting = 0;
 //var soundcounter = 0;
 
 function randomizer() {
-    //$(".players-overlay").removeClass("hidden-element");
+    $(".players-overlay").removeClass("hidden-element");
     //soundcounter++
     const sound = document.getElementById('sound');
     sound.currentTime = 0
@@ -121,8 +125,4 @@ function showresult(resultnumber) {
         nameid.value = '' + actualname + ' died';
     }
     nameid.disabled = "disabled";
-    const sound = document.getElementById('sound');
-    sound.addEventListener("ended", function () {
-        $(".players-overlay").addClass("hidden-element");
-    });
 }
