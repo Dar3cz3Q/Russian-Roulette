@@ -17,6 +17,7 @@ window.addEventListener("load", function () {
     const sound = document.getElementById('sound');
     sound.addEventListener("ended", function () {
         $(".players-overlay").addClass("hidden-element");
+        $(".players-random-button").removeClass("players-random-button-blocked");
     });
     for (let i = 2; i < 38; i++) {
         $(".users-choose").append(`<div class="user-number flex" data-count="${i}">${i}</div>`);
@@ -54,6 +55,7 @@ var randomizercounting = 0;
 
 function randomizer() {
     $(".players-overlay").removeClass("hidden-element");
+    $(".players-random-button").addClass("players-random-button-blocked");
     //soundcounter++
     const sound = document.getElementById('sound');
     sound.currentTime = 0

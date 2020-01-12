@@ -164,6 +164,12 @@ body {
 .players-random-button:active {
     transform: scale(1);
 }
+.players-random-button-blocked {
+    border-bottom: 5px solid #ffffff;
+    border-top: 5px solid #ffffff;
+    border-left: 5px solid #ffffff;
+    border-right: 5px solid #ffffff;
+}
 .players-overlay {
     width: 100%;
     height: 100%;
